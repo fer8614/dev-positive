@@ -31,9 +31,7 @@ const Work = () => {
               animate="show"
               exit="hidden"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-              turpis non est tincidunt tincidunt. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac */}
             </motion.p>
           </div>
 

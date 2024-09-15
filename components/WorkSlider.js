@@ -4,6 +4,15 @@ import Link from "next/link";
 // data
 const workSlides = [
   {
+    href: "https://effervescent-maamoul-b50b9d.netlify.app/",
+    rel: "noopener noreferrer",
+    target: "_blank",
+    src: "/coktail.png",
+    title: "Drink recipes finder",
+    description:
+      "Create a drinks and recipes search engine through an API using React Router DOM, typescript, Headless UI, Zustand, axios, zod and tailwind.",
+  },
+  {
     href: "https://comfy-banoffee-2a9372.netlify.app/",
     rel: "noopener noreferrer",
     target: "_blank",

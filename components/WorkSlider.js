@@ -4,6 +4,15 @@ import Link from "next/link";
 // data
 const workSlides = [
   {
+    href: "https://frontend-product-manager-react-node-express-ts.vercel.app/",
+    rel: "noopener noreferrer",
+    target: "_blank",
+    src: "/product-manager.png",
+    title: "Prduct Manager",
+    description:
+      "Product Manager is a project Full Stack PERN (PostgreSQL, Express, React, Node) with TypeScript, using React Router, Tailwind CSS, and Vite.",
+  },
+  {
     href: "https://effervescent-maamoul-b50b9d.netlify.app/",
     rel: "noopener noreferrer",
     target: "_blank",

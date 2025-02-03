@@ -4,11 +4,20 @@ import Link from "next/link";
 // data
 const workSlides = [
   {
+    href: "https://task-f-low-front-end.vercel.app/auth/login/",
+    rel: "noopener noreferrer",
+    target: "_blank",
+    src: "/taskflow.png",
+    title: "TaskFlow",
+    description:
+      "TaskFlow Full Stack MERN project (Mongodb, Express, React, Node) with Typescript, React Query, Tailwind CSS and Vite",
+  },
+  {
     href: "https://frontend-product-manager-react-node-express-ts.vercel.app/",
     rel: "noopener noreferrer",
     target: "_blank",
     src: "/product-manager.png",
-    title: "Prduct Manager",
+    title: "Product Manager",
     description:
       "Product Manager is a project Full Stack PERN (PostgreSQL, Express, React, Node) with TypeScript, using React Router, Tailwind CSS, and Vite.",
   },
@@ -25,7 +34,7 @@ const workSlides = [
     href: "https://comfy-banoffee-2a9372.netlify.app/",
     rel: "noopener noreferrer",
     target: "_blank",
-    src: "/crytoCurrency.png",
+    src: "/cryptoCurrency.png",
     title: "Crypto Currency",
     description:
       "Real-time cryptocurrency quote project consuming API and using React +  TypeScript + Vite, ZOD and Zustand.",

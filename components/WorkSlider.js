@@ -10,7 +10,7 @@ const workSlides = [
     src: "/linkhub.png",
     title: "LinkHub",
     description:
-      "Fullstack MERN Project. A personalized digital space with a photo, description, and a unique link for all your social media accounts, built with React, Vite, Node.js, Express, MongoDB, TypeScript, and Cloudinary.",
+      "Fullstack MERN Project. A personalized digital space with a photo, description, and a unique link for all your social media accounts, built with React, Vite, Node.js, Express, MongoDB, TS, and Cloudinary.",
   },
   {
     href: "https://task-f-low-front-end.vercel.app/auth/login/",

@@ -10,7 +10,7 @@ const workSlides = [
     src: "/linkhub.png",
     title: "LinkHub",
     description:
-      "Fullstack MERN Project. A personalized digital space with a photo, description, and a unique link for all your social media accounts, built with React, Vite, Node.js, Express, MongoDB",
+      "MERN Project. A single link for all your social media accounts, with a photo and description, built with React, Vite, Node.js, Express, and MongoDB.",
   },
   {
     href: "https://task-f-low-front-end.vercel.app/auth/login/",
@@ -19,7 +19,7 @@ const workSlides = [
     src: "/taskflow.png",
     title: "TaskFlow",
     description:
-      "TaskFlow Full Stack MERN project (Mongodb, Express, React, Node) with Typescript, React Query, Tailwind CSS and Vite",
+      "MERN project. Project and Task Manager (Mongodb, Express, React, Node) with Typescript, React Query, Tailwind CSS and Vite",
   },
   {
     href: "https://frontend-product-manager-react-node-express-ts.vercel.app/",

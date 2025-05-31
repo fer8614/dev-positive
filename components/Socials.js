@@ -7,6 +7,9 @@ import {
   RiInstagramFill,
   RiLinkedinBoxFill,
   RiTwitterXFill,
+  RiYoutubeFill,
+  RiTiktokFill,
+  RiXingFill,
 } from "react-icons/ri";
 
 const Socials = () => {

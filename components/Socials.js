@@ -31,10 +31,26 @@ const Socials = () => {
       <Link
         target={"_blank"}
         rel={"noreferrer noopener"}
-        href={"https://www.instagram.com/fernandoc_mf/"}
+        href={"https://www.instagram.com/devpostive/"}
         className="hover:text-accent transition-all duration-300"
       >
         <RiInstagramFill />
+      </Link>
+      <Link
+        href={"https://www.tiktok.com/@devpositive/"}
+        target={"_blank"}
+        rel={"noreferrer noopener"}
+        className="hover:text-accent transition-all duration-300"
+      >
+        <RiTiktokFill />
+      </Link>
+      <Link
+        href={"https://www.youtube.com/@DevPositive/"}
+        target={"_blank"}
+        rel={"noreferrer noopener"}
+        className="hover:text-accent transition-all duration-300"
+      >
+        <RiYoutubeFill />
       </Link>
       <Link
         href={"https://x.com/fer_cepeda86"}

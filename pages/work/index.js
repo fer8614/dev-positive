@@ -40,8 +40,8 @@ const Work = () => {
             animate="show"
             exit="hidden"
           >
-            I'm a <span className="text-primary-400 font-semibold">software developer</span> with experience in building innovative and functional solutions. 
-            On this page, you'll find a selection of my most noteworthy projects, showcasing my passion for technology, 
+            I&apos;m a <span className="text-primary-400 font-semibold">software developer</span> with experience in building innovative and functional solutions. 
+            On this page, you&apos;ll find a selection of my most noteworthy projects, showcasing my passion for technology, 
             clean design, and efficient code. Each project represents a challenge overcome and an idea brought to life. 
             I invite you to explore my work and see how I can bring value to your ideas or your business.
           </motion.p>
@@ -66,7 +66,7 @@ const Work = () => {
               animate="show"
               exit="hidden"
             >
-              Explore my latest projects and see the technologies and creative solutions I've implemented.
+              Explore my latest projects and see the technologies and creative solutions I&apos;ve implemented.
             </motion.p>
           </div>
 

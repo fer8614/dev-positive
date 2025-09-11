@@ -90,7 +90,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="w-full overflow-x-hidden" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
+    <div className="w-full">
       <SEOHead 
         title="About - Yesid Fernando Cepeda B. | Full Stack Developer"
         description="Learn about my journey as a full-stack developer, skills in modern web technologies, and professional experience in creating innovative digital solutions."

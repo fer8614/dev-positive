@@ -9,7 +9,7 @@
 
 **A modern, responsive, and interactive portfolio website showcasing full-stack development expertise**
 
-[🌐 Live Demo](https://dev-positive.vercel.app) • [📧 Contact](mailto:fernando.inversionmf@gmail.com) • [🔗 LinkedIn](https://linkedin.com/in/yesid-fernando-cepeda)
+[🌐 Live Page](https://devpositive.tech/) • [📧 Contact](mailto:fernando.inversionmf@gmail.com) • [🔗 LinkedIn](https://www.linkedin.com/in/y-fernando-cepeda-b-/)
 
 </div>
 
@@ -345,7 +345,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **Yesid Fernando Cepeda B.**
 - 🌍 **Location**: Keizer, Oregon
 - 📧 **Email**: fernando.inversionmf@gmail.com
-- 💼 **LinkedIn**: [Connect with me](https://linkedin.com/in/yesid-fernando-cepeda)
+- 💼 **LinkedIn**: [Connect with me](https://www.linkedin.com/in/y-fernando-cepeda-b-/)
 - 🐙 **GitHub**: [@fer8614](https://github.com/fer8614)
 
 ### Expertise

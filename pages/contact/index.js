@@ -55,11 +55,11 @@ const Contact = () => {
                   <HiMail className="text-2xl text-primary-400" />
                   <div>
                     <p className="text-white/60 text-sm">Email</p>
-                    <p className="text-white font-medium">contact@example.com</p>
+                    <p className="text-white font-medium">fernando.inversionmf@gmail.com</p>
                   </div>
                 </motion.div>
                 
-                <motion.div 
+                {/* <motion.div 
                   className="flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-white/5 transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >
@@ -68,7 +68,7 @@ const Contact = () => {
                     <p className="text-white/60 text-sm">Phone</p>
                     <p className="text-white font-medium">+1 (555) 123-4567</p>
                   </div>
-                </motion.div>
+                </motion.div> */}
                 
                 <motion.div 
                   className="flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-white/5 transition-all duration-300"
@@ -77,7 +77,7 @@ const Contact = () => {
                   <HiLocationMarker className="text-2xl text-primary-400" />
                   <div>
                     <p className="text-white/60 text-sm">Location</p>
-                    <p className="text-white font-medium">Bogotá, Colombia</p>
+                    <p className="text-white font-medium">Keizer, Oregon</p>
                   </div>
                 </motion.div>
               </div>

@@ -9,7 +9,7 @@
 
 **A modern, responsive, and interactive portfolio website showcasing full-stack development expertise**
 
-[🌐 Live Demo](https://dev-positive.vercel.app) • [📧 Contact](mailto:fernando.inversionmf@gmail.com) • [🔗 LinkedIn](https://linkedin.com/in/yesid-fernando-cepeda)
+[🌐 Live Page](https://devpositive.tech/) • [📧 Contact](mailto:fernando.inversionmf@gmail.com) • [🔗 LinkedIn](https://www.linkedin.com/in/y-fernando-cepeda-b-/)
 
 </div>
 

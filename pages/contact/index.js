@@ -54,8 +54,8 @@ const Contact = () => {
                 >
                   <HiMail className="text-2xl text-primary-400" />
                   <div>
-                    <p className="text-white/60 text-sm">Email</p>
-                    <p className="text-white font-medium">fernando.inversionmf@gmail.com</p>
+                    <p className="text-white/60 text-sm">LinkedIn</p>
+                    <p className="text-white font-medium">www.linkedin.com/in/y-fernando-cepeda-b-</p>
                   </div>
                 </motion.div>
                 

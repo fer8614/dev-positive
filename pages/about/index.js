@@ -90,7 +90,7 @@ import CountUp from "react-countup";
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
       <SEOHead 
         title="About - Yesid Fernando Cepeda B. | Full Stack Developer"
         description="Learn about my journey as a full-stack developer, skills in modern web technologies, and professional experience in creating innovative digital solutions."
@@ -221,8 +221,10 @@ const About = () => {
                       {item.title}
                     </div>
                     {item.stage && (
-                      <div className="text-primary-400 text-sm sm:text-base font-medium">
-                        {item.stage}
+                      <div className="h-full bg-primary/30 py-32 text-center xl:text-left" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
+                        <div className="text-primary-400 font-medium">
+                          {item.stage}
+                        </div>
                       </div>
                     )}
                   </div>

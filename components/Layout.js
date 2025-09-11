@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       <TopLeftImg />
       <Nav />
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen overflow-y-auto" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>{children}</main>
     </div>
   );
 };

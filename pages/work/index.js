@@ -10,7 +10,7 @@ import { fadeIn } from "../../variants";
 
 const Work = () => {
   return (
-    <div className="w-full overflow-x-hidden relative py-16 sm:py-24 md:py-32 lg:py-44 pb-24 sm:pb-28">
+    <div className="w-full overflow-x-hidden relative py-16 sm:py-24 md:py-32 lg:py-44 pb-24 sm:pb-28" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
       <SEOHead 
         title="Work - Yesid Fernando Cepeda B. | Portfolio & Projects"
         description="Explore my portfolio of innovative web development projects. From modern web applications to creative digital solutions, see how I bring ideas to life through code."
@@ -49,7 +49,7 @@ const Work = () => {
         
         <div className="flex flex-col xl:flex-row gap-8 xl:gap-16 items-center">
           {/* Projects Section Title */}
-          <div className="text-center flex xl:w-[35%] flex-col lg:text-left mb-8 xl:mb-0">
+          <div className="w-full xl:w-[35%] flex flex-col lg:text-left mb-8 xl:mb-0" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
             <motion.h2
               className="h2 mb-6"
               variants={fadeIn("up", 0.2)}

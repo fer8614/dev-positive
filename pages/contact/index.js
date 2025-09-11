@@ -16,7 +16,7 @@ import { fadeIn } from "../../variants";
 
 const Contact = () => {
   return (
-    <div className="w-full overflow-x-hidden relative py-16 sm:py-24 md:py-32 lg:py-44 pb-24 sm:pb-28">
+    <div className="w-full overflow-x-hidden relative py-16 sm:py-24 md:py-32 lg:py-44 pb-24 sm:pb-28" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
       <SEOHead 
         title="Contact - Yesid Fernando Cepeda B. | Get In Touch"
         description="Ready to collaborate? Contact me for web development projects, consultations, or any questions about modern web solutions."
@@ -28,7 +28,7 @@ const Contact = () => {
       
       <Circles />
       
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center xl:text-left flex items-center justify-center min-h-screen relative z-10 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-24 sm:pb-28">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center xl:text-left flex items-center justify-center min-h-screen relative z-10 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-24 sm:pb-28" style={{WebkitOverflowScrolling: 'touch', touchAction: 'pan-y'}}>
         <div className="flex flex-col xl:flex-row w-full max-w-7xl gap-8 xl:gap-16">
           
           {/* Contact Info Section */}

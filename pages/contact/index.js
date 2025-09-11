@@ -48,7 +48,7 @@ const Contact = () => {
               </p>
               
               <div className="space-y-4">
-                <motion.div 
+                {/* <motion.div 
                   className="flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-white/5 transition-all duration-300"
                   whileHover={{ x: 5 }}
                 >
@@ -57,7 +57,7 @@ const Contact = () => {
                     <p className="text-white/60 text-sm">LinkedIn</p>
                     <p className="text-white font-medium">www.linkedin.com/in/y-fernando-cepeda-b-</p>
                   </div>
-                </motion.div>
+                </motion.div> */}
                 
                 {/* <motion.div 
                   className="flex items-center gap-4 p-4 rounded-xl glass-card hover:bg-white/5 transition-all duration-300"

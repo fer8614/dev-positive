@@ -20,32 +20,91 @@
 
 @layer base {
   body {
-    @apply bg-secondary overflow-hidden leading-relaxed;
+    @apply bg-primary-900 leading-relaxed;
+    background: linear-gradient(135deg, #0a0b14 0%, #131424 50%, #1a1b2e 100%);
+    overflow-x: hidden;
   }
   .page {
-    @apply w-full h-screen overflow-hidden;
+    @apply w-full min-h-screen;
+    overflow-x: hidden;
   }
   .h1 {
-    @apply text-[25px] leading-tight md:text-[50px] md:leading-[1.3] mb-8 font-semibold;
+    @apply text-[28px] leading-tight md:text-[56px] md:leading-[1.2] mb-8 font-bold;
+    background: linear-gradient(135deg, #ffffff 0%, #e4e6ff 50%, #5b5fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .h2 {
-    @apply text-[25px] leading-tight md:text-[40px] md:leading-[1.3] mb-4 font-semibold;
+    @apply text-[24px] leading-tight md:text-[42px] md:leading-[1.3] mb-6 font-semibold;
+    background: linear-gradient(135deg, #ffffff 0%, #cdd0ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .h3 {
+    @apply text-[20px] leading-tight md:text-[28px] md:leading-[1.4] mb-4 font-medium text-white;
   }             
   p {
-    @apply leading-[1.8] text-white/60 font-light;
+    @apply leading-[1.8] text-white/70 font-normal;
   }
-  .btn,
-  .input {
-    @apply h-[52px];
+  .btn {
+    @apply h-[52px] px-8 rounded-xl font-medium transition-all duration-300;
+    background: linear-gradient(135deg, rgba(91, 95, 255, 0.8) 0%, rgba(241, 48, 36, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(91, 95, 255, 0.3);
+  }
+  .btn-secondary {
+    @apply h-[52px] px-8 rounded-xl font-medium transition-all duration-300;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
   }
   .input {
-    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+    @apply w-full h-[52px] rounded-xl pl-6 capitalize font-medium;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  .input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(91, 95, 255, 0.5);
+    box-shadow: 0 0 20px rgba(91, 95, 255, 0.2);
   }
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    @apply outline-none placeholder:text-white/40 placeholder:font-normal;
   }
   .textarea {
-    @apply w-full h-[100px] p-6 capitalize rounded-lg resize-y;
+    @apply w-full h-[120px] p-6 capitalize rounded-xl resize-y font-medium;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  .textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(91, 95, 255, 0.5);
+    box-shadow: 0 0 20px rgba(91, 95, 255, 0.2);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 }

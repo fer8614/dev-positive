@@ -1,29 +1,29 @@
-import '../styles/globals.css';
-import Head from 'next/head';
-//Components
-import Layout from '../components/Layout';
-import Transition from '../components/Transition';
+import "../styles/globals.css";
 
-//router
-import { useRouter } from 'next/router';
+// components
+import Layout from "../components/Layout";
+import Transition from "../components/Transition";
+import ErrorBoundary from "../components/ErrorBoundary";
+
+// router
+import { useRouter } from "next/router";
 
 // framer motion
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from "framer-motion";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
-    <Layout>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <AnimatePresence mode='wait'>
-        <motion.div key={router.route} className='h-full'>
-          <Transition />
-          <Component {...pageProps} />
-        </motion.div>
-      </AnimatePresence>
-    </Layout>
+    <ErrorBoundary>
+      <Layout>
+        <AnimatePresence mode="wait">
+          <motion.div key={router.route} className="h-full">
+            <Transition />
+            <Component {...pageProps} />
+          </motion.div>
+        </AnimatePresence>
+      </Layout>
+    </ErrorBoundary>
   );
 }
 

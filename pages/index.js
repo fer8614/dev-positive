@@ -35,7 +35,7 @@ const Home = () => {
       {/* text */}
       <div className="relative z-10 w-full min-h-screen flex items-center">
         <div className="text-center flex flex-col justify-center xl:text-left w-full container mx-auto 
-                       px-4 sm:px-6 lg:px-8 py-36 sm:py-48 md:py-60">
+                       px-4 sm:px-6 lg:px-8 py-20 sm:py-32 md:py-40 lg:py-32">
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}

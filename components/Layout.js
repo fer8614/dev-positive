@@ -13,6 +13,7 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 import ScrollProgress from "../components/ScrollProgress";
+import Footer from "../components/Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
       <Nav />
       <Header />
       <main className="min-h-screen">{children}</main>
+      <Footer />
     </div>
   );
 };

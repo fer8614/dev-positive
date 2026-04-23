@@ -47,40 +47,16 @@ const Work = () => {
           </motion.p>
         </motion.div>
         
-        <div className="flex flex-col xl:flex-row gap-8 xl:gap-16 items-center">
-          {/* Projects Section Title */}
-          <div className="w-full xl:w-[35%] flex flex-col lg:text-left mb-8 xl:mb-0">
-            <motion.h2
-              className="h2 mb-6"
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-            >
-              Featured <span className="text-accent">Projects</span>
-            </motion.h2>
-            <motion.p
-              className="text-white/70 max-w-[400px] mx-auto lg:mx-0 leading-relaxed"
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-            >
-              Explore my latest projects and see the technologies and creative solutions I&apos;ve implemented.
-            </motion.p>
-          </div>
-
-          {/* slider */}
-          <motion.div
-            className="w-full xl:max-w-[65%]"
-            variants={fadeIn("down", 0.6)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-          >
-            <WorkSlider />
-          </motion.div>
-        </div>
+        {/* Projects Grid */}
+        <motion.div
+          className="w-full"
+          variants={fadeIn("up", 0.6)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+        >
+          <WorkSlider />
+        </motion.div>
       </div>
       <Bulb />
     </div>

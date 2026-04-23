@@ -9,7 +9,7 @@ const workSlides = [
   {
     href: "https://linkhubf.netlify.app/",
     github: "https://github.com/fer8614",
-    src: "/linkhub.png",
+    src: "/linkHub.png",
     title: "LinkHub",
     description:
       "A single link for all your social media accounts, with a photo and description.",

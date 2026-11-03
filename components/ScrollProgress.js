@@ -10,8 +10,8 @@ const ScrollProgress = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 to-accent-500 
-                 transform-gpu z-50 shadow-glow"
+      aria-hidden="true"
+      className="fixed top-0 left-0 right-0 z-50 h-0.5 bg-violet-300/70 transform-gpu"
       style={{ scaleX, transformOrigin: "0%" }}
     />
   );

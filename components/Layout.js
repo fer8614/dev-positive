@@ -11,20 +11,18 @@ const sora = Sora({
 // components
 import Nav from "../components/Nav";
 import Header from "../components/Header";
-import TopLeftImg from "../components/TopLeftImg";
 import ScrollProgress from "../components/ScrollProgress";
 import Footer from "../components/Footer";
 
 const Layout = ({ children }) => {
   return (
     <div
-      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
+      className={`page site-root text-white ${sora.variable} font-sora relative isolate pb-28 xl:pb-0`}
     >
       <ScrollProgress />
-      <TopLeftImg />
-      <Nav />
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <Nav />
+      <main id="main-content" tabIndex={-1} className="min-h-screen">{children}</main>
       <Footer />
     </div>
   );

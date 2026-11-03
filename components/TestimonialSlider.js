@@ -48,14 +48,14 @@ const TestimonialSlider = () => {
         clickable: true,
       }}
       modules={[Navigation, Pagination]}
-      className="h-[400px]"
+      className="site-surface pb-12"
     >
       {testimonialData.map((person, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-16">
+            <div className="flex min-h-[320px] flex-col items-center justify-center gap-6 px-12 py-10 sm:px-16 md:flex-row md:gap-10">
               {/* avatar, name, position */}
-              <div className="w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
+              <div className="w-full max-w-[220px] flex flex-col items-center">
                 <div className="flex flex-col justify-center text-center">
                   {/* avatar */}
                   <div className="mb-2 mx-auto">
@@ -75,7 +75,7 @@ const TestimonialSlider = () => {
                 </div>
               </div>
               {/* quote & message */}
-              <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
+              <div className="flex-1 flex flex-col justify-center text-slate-300">
                 {/* quote icon */}
                 <div className="mb-4">
                   <FaQuoteLeft className="text-4xl xl:text-6xl text-white/20 mx-auto" />

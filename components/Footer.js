@@ -1,79 +1,58 @@
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { BsArrowUpRight } from "react-icons/bs";
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const exploreLinks = [
+  { name: "About", path: "/about" },
+  { name: "Projects", path: "/work" },
+  { name: "Services", path: "/services" },
+  { name: "Testimonials", path: "/testimonials" },
+];
+const legalLinks = [
+  { name: "Privacy Policy", path: "/privacy-policy" },
+  { name: "Terms of Service", path: "/terms-of-service" },
+  { name: "Data Deletion", path: "/data-deletion" },
+];
 
-  const footerLinks = [
-    { name: "Privacy Policy", path: "/privacy-policy" },
-    { name: "Terms of Service", path: "/terms-of-service" },
-    { name: "Data Deletion", path: "/data-deletion" },
-  ];
-
-  return (
-    <footer className="relative z-10 w-full bg-gradient-to-t from-primary-950/80 via-transparent to-transparent border-t border-white/10 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 mb-8"
-        >
-          {/* Brand Section */}
-          <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-xl font-bold text-primary-400 mb-2">DevPositive</h3>
-            <p className="text-white/60 text-sm text-center md:text-left">
-              Full Stack Developer crafting innovative digital experiences
-            </p>
-          </div>
-
-          {/* Legal Links */}
-          <div className="flex flex-col items-center">
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
-            <div className="flex flex-col gap-2">
-              {footerLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.path}
-                  className="text-white/60 hover:text-primary-400 transition-colors duration-300 text-sm"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Section */}
-          <div className="flex flex-col items-center md:items-end">
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <a
-              href="mailto:support@devpositive.work"
-              className="text-white/60 hover:text-primary-400 transition-colors duration-300 text-sm"
-            >
-              support@devpositive.work
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
-
-        {/* Copyright */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-center text-white/50 text-xs sm:text-sm"
-        >
-          <p>
-            &copy; {currentYear} Yesid Fernando Cepeda B. All rights reserved.
-          </p>
-        </motion.div>
+const Footer = () => (
+  <footer aria-label="Site footer" className="site-footer relative z-10 border-t border-white/10">
+    <div className="mx-auto max-w-7xl px-6 sm:px-8 xl:pr-40">
+      <div className="flex flex-col items-start justify-between gap-6 border-b border-white/10 py-10 sm:flex-row sm:items-center lg:py-12">
+        <div>
+          <p className="site-eyebrow">The next chapter</p>
+          <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Let&apos;s build something useful.</h2>
+          <p className="mt-3 max-w-lg text-sm leading-7 text-slate-400">A role to fill or an idea to bring to life? Let&apos;s talk about the next step.</p>
+        </div>
+        <Link href="/contact" className="site-button shrink-0">Start a conversation <BsArrowUpRight aria-hidden="true" /></Link>
       </div>
-    </footer>
-  );
-};
+      <div className="grid gap-9 py-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr] lg:gap-12">
+        <div>
+          <Link href="/" aria-label="DevPositive home" className="inline-flex items-center gap-3 rounded-lg">
+            <Image src="/logo-2.png" width={32} height={36} alt="" className="h-9 w-8 object-contain" />
+            <span className="text-lg font-semibold tracking-tight text-white">DevPositive<span className="text-violet-300">.</span></span>
+          </Link>
+          <p className="mt-4 max-w-xs text-sm leading-7 text-slate-400">Full-stack development for teams and businesses. Thoughtful interfaces. Solid foundations.</p>
+          <a href="mailto:support@devpositive.work" className="mt-4 inline-block min-h-[44px] break-all py-2 text-sm text-violet-200 hover:text-white">support@devpositive.work</a>
+        </div>
+        <nav aria-label="Explore the site">
+          <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.16em] text-slate-300">Explore</h2>
+          <ul className="space-y-1">{exploreLinks.map((link) => (
+            <li key={link.path}><Link href={link.path} className="inline-flex min-h-[40px] items-center text-sm text-slate-400 hover:text-violet-200">{link.name}</Link></li>
+          ))}</ul>
+        </nav>
+        <nav aria-label="Legal information">
+          <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.16em] text-slate-300">Legal</h2>
+          <ul className="space-y-1">{legalLinks.map((link) => (
+            <li key={link.path}><Link href={link.path} className="inline-flex min-h-[40px] items-center text-sm text-slate-400 hover:text-violet-200">{link.name}</Link></li>
+          ))}</ul>
+        </nav>
+      </div>
+      <div className="flex flex-col justify-between gap-3 border-t border-white/10 py-6 text-xs text-slate-500 sm:flex-row">
+        <p>&copy; {new Date().getFullYear()} Yesid F Cepeda. All rights reserved.</p>
+        <span>Built with care. Made to connect.</span>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

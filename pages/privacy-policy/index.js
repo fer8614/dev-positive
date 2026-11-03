@@ -1,12 +1,7 @@
 import React from "react";
 
-// components
-import Circles from "../../components/Circles";
+import PageShell from "../../components/PageShell";
 import SEOHead from "../../components/SEOHead";
-
-// framer motion
-import { motion } from "framer-motion";
-import { fadeIn } from "../../variants";
 
 const PrivacyPolicy = () => {
   const sections = [
@@ -39,63 +34,20 @@ const PrivacyPolicy = () => {
   return (
     <div className="w-full">
       <SEOHead 
-        title="Privacy Policy - Yesid Fernando Cepeda B."
+        title="Privacy Policy - Yesid F Cepeda"
         description="Read our privacy policy to understand how we collect, use, and protect your personal information."
       />
       
-      {/* Modern gradient background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-secondary-900 -z-10"></div>
-      <div className="fixed inset-0 bg-hero-gradient opacity-50 -z-10"></div>
-      
-      <Circles />
-      
-      {/* Main content with proper spacing */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 md:pt-48 pb-24 sm:pb-28 min-h-screen">
-        
-        {/* Header Section */}
-        <motion.div
-          className="text-center mb-16"
-          variants={fadeIn("down", 0.2)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-        >
-          <h1 className="h1 mb-6">
-            Privacy <span className="bg-gradient-to-r from-accent-500 to-accent-700 bg-clip-text text-transparent">Policy</span>
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-            Last updated: January 2026
-          </p>
-        </motion.div>
-
-        {/* Content Sections */}
-        <motion.div
-          className="space-y-6 sm:space-y-8"
-          variants={fadeIn("up", 0.4)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-        >
-          {sections.map((section, index) => (
-            <motion.div
-              key={index}
-              className="glass-card p-6 sm:p-8 rounded-2xl backdrop-blur-sm border border-white/10 
-                         hover:border-primary-400/30 hover:bg-primary-400/5 transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.01 }}
-            >
-              <h2 className="text-xl sm:text-2xl font-bold text-primary-400 mb-4">
-                {section.title}
-              </h2>
-              <p className="text-white/80 leading-relaxed whitespace-pre-line text-sm sm:text-base">
-                {section.content}
-              </p>
-            </motion.div>
+      <PageShell title="Privacy Policy" description="Last updated: January 2026">
+        <div className="site-prose space-y-6">
+          {sections.map((section) => (
+            <section key={section.title} className="site-surface p-6 sm:p-8">
+              <h2 className="mb-4">{section.title}</h2>
+              <p className="whitespace-pre-line">{section.content}</p>
+            </section>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </PageShell>
     </div>
   );
 };

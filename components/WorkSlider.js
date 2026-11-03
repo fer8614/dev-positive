@@ -1,11 +1,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { BsArrowRight, BsGithub, BsGlobe } from "react-icons/bs";
+import { BsArrowRight, BsGithub } from "react-icons/bs";
 
 // data
-const workSlides = [
+export const workSlides = [
+  {
+    href: "https://clipfactory.win/",
+    src: "/clipfactory.png",
+    title: "ClipFactory",
+    description:
+      "AI-assisted video clipping SaaS with transcription, highlight detection, authentication, subscriptions and usage limits.",
+    tagline: "From long videos to AI-assisted clips.",
+    tags: ["Next.js", "NestJS", "AWS", "TypeScript", "PostgreSQL", "Prisma", "n8n", "Cloudflare R2", "FFmpeg"],
+    category: "fullstack",
+    ai: true,
+    featured: true,
+    imageFit: "contain",
+  },
   {
     href: "https://linkhubf.netlify.app/",
     github: "https://github.com/fer8614",
@@ -134,22 +146,20 @@ const workSlides = [
 const categories = [
   { id: "all", label: "All Projects" },
   { id: "fullstack", label: "Full Stack" },
+  { id: "ai", label: "AI Projects" },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
 ];
 
-const ProjectCard = ({ project, index }) => {
+export const matchesCategory = (project, category) => {
+  if (category === "all") return true;
+  if (category === "ai") return project.ai === true;
+  return project.category === category;
+};
+
+const ProjectCard = ({ project }) => {
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 30 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      className={`glass-card rounded-2xl overflow-hidden border border-white/10 
-                  hover:border-primary-400/30 transition-all duration-500 group flex flex-col
-                  ${project.featured ? "md:col-span-2 lg:col-span-1" : ""}`}
-    >
+    <div className="site-surface overflow-hidden flex flex-col">
       {/* Image Container */}
       <div className="relative overflow-hidden aspect-video">
         <Image
@@ -157,58 +167,31 @@ const ProjectCard = ({ project, index }) => {
           width={600}
           height={340}
           alt={project.title}
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+          className={`${project.imageFit === "contain" ? "object-contain bg-white" : "object-cover"} w-full h-full`}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/90 via-primary-950/20 to-transparent 
-                        opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-        
         {/* Featured Badge */}
         {project.featured && (
-          <div className="absolute top-3 left-3 bg-accent-500/90 text-white text-[10px] sm:text-xs font-bold 
-                          px-2.5 py-1 rounded-full backdrop-blur-sm uppercase tracking-wider">
+          <div className="absolute top-3 left-3 bg-violet-300 text-slate-950 text-[10px] sm:text-xs font-bold
+                          px-2.5 py-1 rounded-full uppercase tracking-wider">
             Featured
           </div>
         )}
 
-        {/* Quick Links Overlay */}
-        <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 
-                        translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-          <Link
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 
-                       text-white hover:bg-primary-400/30 hover:border-primary-400/40 transition-all duration-300"
-            title="View Live"
-          >
-            <BsGlobe className="text-sm" />
-          </Link>
-          {project.github && (
-            <Link
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 
-                         text-white hover:bg-primary-400/30 hover:border-primary-400/40 transition-all duration-300"
-              title="View Code"
-            >
-              <BsGithub className="text-sm" />
-            </Link>
-          )}
-        </div>
       </div>
 
       {/* Content */}
       <div className="p-4 sm:p-5 flex flex-col flex-1">
         {/* Title & Category */}
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-300">
+          <h3 className="text-base sm:text-lg font-semibold text-white">
             {project.title}
           </h3>
-          <span className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider font-medium 
-                           bg-white/5 px-2 py-0.5 rounded-full border border-white/10 whitespace-nowrap">
-            {project.category}
-          </span>
+          <div className="flex flex-wrap justify-end gap-1.5">
+            <span className="text-[10px] sm:text-xs text-white/50 uppercase tracking-wider font-medium bg-white/5 px-2 py-0.5 rounded-full border border-white/10 whitespace-nowrap">
+              {project.category}
+            </span>
+            {project.ai && <span role="img" aria-label="AI-enabled project" className="rounded-full border border-violet-300/30 bg-violet-300/10 px-2 py-0.5 text-[10px] font-medium text-violet-200">AI</span>}
+          </div>
         </div>
 
         {/* Description */}
@@ -221,8 +204,8 @@ const ProjectCard = ({ project, index }) => {
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="text-[10px] sm:text-xs px-2 py-0.5 rounded-md bg-primary-400/10 text-primary-400 
-                         border border-primary-400/20 font-medium"
+              className="text-[10px] sm:text-xs px-2 py-0.5 rounded-md bg-violet-300/10 text-violet-300
+                         border border-violet-300/20 font-medium"
             >
               {tag}
             </span>
@@ -230,72 +213,69 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* CTA */}
+        <div className="flex flex-wrap items-center gap-5 mt-auto">
         <Link
           href={project.href}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-medium text-white/80 
-                     hover:text-primary-400 transition-colors duration-300 group/link mt-auto"
+                     hover:text-violet-300 transition-colors duration-300 group/link"
         >
           View Project
           <BsArrowRight className="group-hover/link:translate-x-1 transition-transform duration-300" />
         </Link>
+        {project.github && (
+          <Link href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-violet-300">
+            <BsGithub aria-hidden="true" /> View Code
+          </Link>
+        )}
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const WorkSlider = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const filteredProjects = activeCategory === "all"
-    ? workSlides
-    : workSlides.filter((p) => p.category === activeCategory);
+  const filteredProjects = workSlides.filter((project) => matchesCategory(project, activeCategory));
 
   return (
     <div>
       {/* Category Filters */}
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
         {categories.map((cat) => (
-          <motion.button
+          <button
             key={cat.id}
+            type="button"
+            aria-pressed={activeCategory === cat.id}
             onClick={() => setActiveCategory(cat.id)}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium 
-                        border backdrop-blur-sm transition-all duration-300 cursor-pointer
+                        border transition-colors duration-300 cursor-pointer
                         ${activeCategory === cat.id
-                          ? "bg-primary-400/15 text-primary-400 border-primary-400/30 shadow-glow"
+                          ? "bg-violet-300 text-slate-950 border-violet-300"
                           : "bg-white/5 text-white/70 border-white/10 hover:bg-white/10 hover:text-white"
                         }`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             {cat.label}
             <span className="ml-2 text-[10px] sm:text-xs opacity-60">
-              ({cat.id === "all" ? workSlides.length : workSlides.filter((p) => p.category === cat.id).length})
+              ({workSlides.filter((project) => matchesCategory(project, cat.id)).length})
             </span>
-          </motion.button>
+          </button>
         ))}
       </div>
 
       {/* Project Grid */}
-      <motion.div
-        layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-      >
-        <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
-          ))}
-        </AnimatePresence>
-      </motion.div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </div>
 
       {/* Project Count */}
-      <motion.p
-        layout
-        className="text-center text-white/40 text-xs sm:text-sm mt-8 sm:mt-10"
-      >
+      <p className="text-center text-white/40 text-xs sm:text-sm mt-8 sm:mt-10">
         Showing {filteredProjects.length} of {workSlides.length} projects
-      </motion.p>
+      </p>
     </div>
   );
 };

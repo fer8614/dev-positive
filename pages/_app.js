@@ -1,27 +1,14 @@
 import "../styles/globals.css";
-
-// components
-import Layout from "../components/Layout";
-import Transition from "../components/Transition";
-import ErrorBoundary from "../components/ErrorBoundary";
-
-// router
 import { useRouter } from "next/router";
-
-// framer motion
-import { AnimatePresence, motion } from "framer-motion";
+import Layout from "../components/Layout";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <ErrorBoundary>
       <Layout>
-        <AnimatePresence mode="wait">
-          <motion.div key={router.route} className="h-full">
-            <Transition />
-            <Component {...pageProps} />
-          </motion.div>
-        </AnimatePresence>
+        <Component key={router.route} {...pageProps} />
       </Layout>
     </ErrorBoundary>
   );

@@ -19,6 +19,7 @@ const Socials = () => {
         target={"_blank"}
         rel={"noreferrer noopener"}
         href={"https://github.com/fer8614"}
+        aria-label="GitHub"
         className="p-2 sm:p-3 rounded-lg sm:rounded-xl glass-card hover:text-primary-400 transition-all duration-300 
                    hover:scale-110 hover:shadow-glow hover:bg-white/20 group"
       >
@@ -26,6 +27,7 @@ const Socials = () => {
       </Link>
       <Link
         href={"https://www.linkedin.com/in/y-fernando-cepeda-b-/"}
+        aria-label="LinkedIn"
         target={"_blank"}
         rel={"noreferrer noopener"}
         className="p-2 sm:p-3 rounded-lg sm:rounded-xl glass-card hover:text-blue-400 transition-all duration-300 
@@ -37,6 +39,7 @@ const Socials = () => {
         target={"_blank"}
         rel={"noreferrer noopener"}
         href={"https://www.instagram.com/devpostive/"}
+        aria-label="Instagram"
         className="p-2 sm:p-3 rounded-lg sm:rounded-xl glass-card hover:text-pink-400 transition-all duration-300 
                    hover:scale-110 hover:shadow-glow hover:bg-white/20 group"
       >
@@ -44,6 +47,7 @@ const Socials = () => {
       </Link>
       <Link
         href={"https://www.tiktok.com/@devpositive/"}
+        aria-label="TikTok"
         target={"_blank"}
         rel={"noreferrer noopener"}
         className="p-2 sm:p-3 rounded-lg sm:rounded-xl glass-card hover:text-gray-300 transition-all duration-300 
@@ -53,6 +57,7 @@ const Socials = () => {
       </Link>
       <Link
         href={"https://www.youtube.com/@DevPositive/"}
+        aria-label="YouTube"
         target={"_blank"}
         rel={"noreferrer noopener"}
         className="p-2 sm:p-3 rounded-lg sm:rounded-xl glass-card hover:text-gray-300 transition-all duration-300 
@@ -62,6 +67,7 @@ const Socials = () => {
       </Link>
       <Link
         href={"https://x.com/fer_cepeda86"}
+        aria-label="X"
         target={"_blank"}
         rel={"noreferrer noopener"}
         className="p-2 sm:p-3 rounded-lg sm:rounded-xl glass-card hover:text-gray-300 transition-all duration-300 

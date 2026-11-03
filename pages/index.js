@@ -1,169 +1,106 @@
-// next image
 import Image from "next/image";
-
-// components
-import ParticlesContainer from "../components/ParticlesContainer";
-import ProjectsBtn from "../components/ProjectsBtn";
-import Avatar from "../components/Avatar";
-import AnimatedText from "../components/AnimatedText";
+import Link from "next/link";
+import { BsArrowDownRight, BsArrowUpRight, BsArrowRight } from "react-icons/bs";
 import SEOHead from "../components/SEOHead";
+import { workSlides } from "../components/WorkSlider";
 
-// framer motion
-import { motion } from "framer-motion";
+const featuredProjects = workSlides.filter((project) => project.featured);
+const spotlight = featuredProjects[0];
+const actionStyle = "inline-flex min-h-[48px] items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300";
 
-// variants
-import { fadeIn } from "../variants";
+const Home = () => (
+  <div className="relative z-10 bg-[#0b0d14]">
+    <SEOHead
+      title="Yesid F Cepeda — Full Stack Developer | DevPositive"
+      description="Full-stack development for teams and businesses. Explore Yesid F Cepeda's web applications, technical experience and ways to work together."
+    />
 
-const Home = () => {
-  return (
-    <div className="w-full relative">
-      <SEOHead 
-        title="Yesid Fernando Cepeda B. - Full Stack Developer Portfolio"
-        description="Welcome to my modern portfolio showcasing full-stack development expertise in React, Next.js, Node.js and cutting-edge web technologies."
-      />
-      
-      {/* Modern gradient background */}
-      <div className="fixed inset-0 bg-hero-gradient -z-10"></div>
-      <div className="fixed inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-secondary-900 -z-10"></div>
-      
-      {/* Background Elements */}
-      <div className="w-full h-full absolute right-0 bottom-0">
-        {/* particles */}
-        <ParticlesContainer />
+    <section aria-labelledby="intro-heading" className="relative overflow-hidden border-b border-white/10">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-24 h-[480px] w-[480px] rounded-full bg-violet-500/10 blur-[100px]" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-16 pt-56 sm:px-8 sm:pt-44 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pb-24 lg:pt-48 xl:pr-40">
+        <div>
+          <p className="mb-7 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-violet-300">
+            <span aria-hidden="true" className="h-px w-8 bg-violet-400" />
+            Full Stack Developer
+          </p>
+          <h1 id="intro-heading" className="max-w-2xl text-[clamp(2.8rem,6vw,5.3rem)] font-semibold leading-[1.05] tracking-[-0.055em] text-white">
+            Good ideas deserve <span className="text-violet-300">great software.</span>
+          </h1>
+          <p className="mt-7 max-w-lg text-base leading-8 text-slate-400 sm:text-lg">
+            I&apos;m <span className="font-medium text-slate-100">Yesid F Cepeda</span>.
+            I build thoughtful web experiences, connecting clean interfaces with solid backends — for teams and businesses.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link href="#selected-work" className={`${actionStyle} bg-violet-300 text-slate-950 hover:bg-violet-200`}>
+              View projects <BsArrowDownRight aria-hidden="true" />
+            </Link>
+            <Link href="/contact" className={`${actionStyle} border border-white/15 text-white hover:border-white/40 hover:bg-white/5`}>
+              Let&apos;s talk <BsArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-6 text-xs tracking-wide text-slate-400" aria-label="Core technologies">
+            {["React", "Next.js", "TypeScript", "Node.js"].map((technology) => <span key={technology}>{technology}</span>)}
+          </div>
+        </div>
+
+        <Link href={spotlight.href} target="_blank" rel="noopener noreferrer" aria-label={`Explore ${spotlight.title} live demo`} className="group relative block rounded-3xl border border-white/10 bg-[#141720] p-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 sm:p-5">
+          <div className="mb-4 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-slate-400">
+            <span>From the workshop</span>
+            <span className="flex gap-1.5" aria-hidden="true"><span className="h-1.5 w-1.5 rounded-full bg-violet-300" /><span className="h-1.5 w-1.5 rounded-full bg-white/20" /><span className="h-1.5 w-1.5 rounded-full bg-white/20" /></span>
+          </div>
+          <div className="relative aspect-video overflow-hidden rounded-2xl bg-slate-800">
+            <Image src={spotlight.src} alt={`${spotlight.title} application preview`} fill priority sizes="(max-width: 959px) 90vw, 40vw" className={`${spotlight.imageFit === "contain" ? "object-contain bg-white" : "object-cover"} object-top transition-transform duration-500 motion-safe:group-hover:scale-[1.03] motion-reduce:transition-none`} />
+          </div>
+          <div className="flex items-center justify-between gap-4 pb-1 pt-5">
+            <div><p className="text-sm font-medium text-white">{spotlight.title}</p><p className="mt-1 text-xs text-slate-400">{spotlight.tagline || spotlight.description}</p></div>
+            <span aria-hidden="true" className="rounded-full border border-white/15 p-3 text-violet-300"><BsArrowUpRight /></span>
+          </div>
+        </Link>
       </div>
-      
-      {/* text */}
-      <div className="relative z-10 w-full min-h-screen flex items-center">
-        <div className="text-center flex flex-col justify-center xl:text-left w-full container mx-auto 
-                       px-4 sm:px-6 lg:px-8 py-20 sm:py-32 md:py-40 lg:py-32">
-          {/* title */}
-          <motion.h1
-            variants={fadeIn("down", 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="h1 mt-8 sm:mt-12 md:mt-16 relative"
-          >
-            <span className="block text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight">
-              Code Your Future
-            </span>
-            <span className="block text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[56px] leading-tight bg-gradient-to-r from-accent-500 via-accent-600 to-accent-700 bg-clip-text text-transparent">
-              Design Your Success
-            </span>
-          </motion.h1>
-          
-          {/* subtitle */}
-          <motion.p
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="max-w-sm sm:max-w-md md:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 
-                       mb-8 sm:mb-10 xl:mb-16 text-base sm:text-lg leading-relaxed
-                       glass-card p-4 sm:p-6 rounded-xl sm:rounded-2xl backdrop-blur-sm border border-white/10"
-          >
-            Hello! I&apos;m a passionate <span className="text-primary-400 font-semibold">Full Stack Developer</span>. 
-            My journey into web development began with a curiosity about how websites work, and
-            it quickly turned into a <span className="text-accent-400 font-semibold">full-fledged passion</span>.
-          </motion.p>
-          
-          {/* Enhanced CTA section */}
-          <motion.div
-            variants={fadeIn("down", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="flex flex-col xl:flex-row items-center justify-center xl:justify-start gap-4 sm:gap-6 z-10"
-          >
-            <div className="scale-75 sm:scale-90 md:scale-100">
-              <ProjectsBtn />
+    </section>
+
+    <section id="selected-work" aria-labelledby="work-heading" className="mx-auto max-w-7xl scroll-mt-8 px-6 py-16 sm:px-8 lg:py-24 xl:pr-40">
+      <div className="mb-9 flex flex-wrap items-end justify-between gap-5">
+        <div><p className="mb-3 text-xs uppercase tracking-[0.2em] text-violet-300">Selected work</p><h2 id="work-heading" className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Ideas turned into experiences.</h2></div>
+        <Link href="/work" className="inline-flex min-h-[44px] items-center gap-2 text-sm text-slate-300 hover:text-violet-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-300">All projects <BsArrowUpRight aria-hidden="true" /></Link>
+      </div>
+      <div className="grid gap-6 md:grid-cols-2">
+        {featuredProjects.map((project, index) => (
+          <article key={project.title} className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#12151e]">
+            <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-slate-800">
+              <Image src={project.src} alt={`${project.title} application preview`} fill sizes="(max-width: 767px) 90vw, 45vw" className={`${project.imageFit === "contain" ? "object-contain bg-white" : "object-cover"} object-top transition-transform duration-500 motion-safe:group-hover:scale-105 motion-reduce:transition-none`} />
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-col xl:flex-row items-center gap-2 xl:gap-4"
-            >
-              <div className="w-12 xl:w-px h-px xl:h-12 bg-gradient-to-r xl:bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
-              <div className="text-center xl:text-left">
-                <p className="text-white/60 text-xs sm:text-sm mb-1">Ready to collaborate?</p>
-                <p className="text-primary-400 font-medium text-sm sm:text-base">Let&apos;s build something amazing</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
+            <div className="flex flex-1 flex-col p-6">
+              <div className="mb-4 flex items-center justify-between text-[10px] uppercase tracking-[0.16em] text-slate-400"><span className="inline-flex items-center gap-2">Full-stack application {project.ai && <span role="img" aria-label="AI-enabled project" className="rounded-full border border-violet-300/30 bg-violet-300/10 px-2 py-0.5 text-violet-200">AI</span>}</span><span>0{index + 1}</span></div>
+              <h3 className="text-xl font-semibold tracking-tight text-white">{project.title}</h3>
+              <p className="mb-5 mt-3 text-sm leading-7 text-slate-400">{project.description}</p>
+              <ul className="mb-6 flex flex-wrap gap-2" aria-label={`${project.title} technologies`}>
+                {project.tags.slice(0, 3).map((tag) => <li key={tag} className="rounded-md border border-white/10 px-2 py-1 text-[10px] text-slate-300">{tag}</li>)}
+              </ul>
+              <Link href={project.href} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} live demo`} className="mt-auto inline-flex min-h-[44px] items-center justify-between border-t border-white/10 pt-4 text-sm text-violet-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-300">View live <BsArrowUpRight aria-hidden="true" /></Link>
+            </div>
+          </article>
+        ))}
       </div>
-      {/* Image - Responsive */}
-      <div className="hidden md:block w-full md:w-[800px] lg:w-[1000px] xl:w-[1200px] h-full absolute right-0 bottom-0 z-0">
-        {/* Enhanced bg img with modern overlay */}
-        <div
-          className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat 
-          w-full h-full absolute mix-blend-color-dodge translate-z-0 opacity-20 md:opacity-30"
-        ></div>
-        
-        {/* Modern geometric shapes - Responsive */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute top-1/4 right-1/4 w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 
-                       bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-full blur-2xl md:blur-3xl"
-            animate={{ 
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360]
-            }}
-            transition={{ 
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-          <motion.div
-            className="absolute bottom-1/3 right-1/3 w-24 h-24 md:w-36 md:h-36 lg:w-48 lg:h-48 
-                       bg-gradient-to-br from-accent-400/20 to-primary-600/20 rounded-full blur-xl md:blur-2xl"
-            animate={{ 
-              scale: [1.2, 1, 1.2],
-              rotate: [360, 180, 0]
-            }}
-            transition={{ 
-              duration: 15,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-        </div>
-        
-        {/* particles */}
-        <div className="relative z-10 opacity-60 md:opacity-100">
-          <ParticlesContainer />
-        </div>
-        
-        {/* avatar img with enhanced animation - Responsive */}
-        <motion.div
-          variants={fadeIn("up", 0.5)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          transition={{ duration: 1, ease: "easeInOut" }}
-          className="w-full h-full max-w-[300px] max-h-[350px] md:max-w-[400px] md:max-h-[450px] 
-                     lg:max-w-[500px] lg:max-h-[550px] absolute bottom-0 right-0 
-                     md:bottom-0 md:right-[5%] lg:right-[10%] xl:right-[15%] z-20"
-        >
-          <motion.div
-            animate={{ y: [0, -15, 0] }}
-            transition={{ 
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="relative"
-          >
-            <Avatar />
-            {/* Glow effect behind avatar */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary-500/20 via-transparent to-transparent rounded-full blur-xl md:blur-2xl -z-10"></div>
-          </motion.div>
-        </motion.div>
+    </section>
+
+    <section aria-labelledby="collaborate-heading" className="mx-auto max-w-7xl px-6 pb-16 sm:px-8 lg:pb-24 xl:pr-40">
+      <div className="mb-8 border-t border-white/10 pt-12"><p className="mb-3 text-xs uppercase tracking-[0.2em] text-violet-300">Two ways to connect</p><h2 id="collaborate-heading" className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Good work starts with a conversation.</h2></div>
+      <div className="grid gap-5 md:grid-cols-2">
+        {[
+          { title: "For recruiters", description: "Looking for a developer for your team? Get to know my skills, background and approach to building software.", href: "/about", action: "Explore my experience", number: "01" },
+          { title: "For clients", description: "Have a business challenge or a product idea? Let's explore how a thoughtful web application can help.", href: "/contact", action: "Discuss a project", number: "02" },
+        ].map((audience) => (
+          <div key={audience.title} className="rounded-2xl border border-white/10 bg-[#12151e] p-7 sm:p-8">
+            <span aria-hidden="true" className="text-xs text-violet-300">{audience.number} /</span>
+            <h3 className="mb-3 mt-5 text-xl font-medium text-white">{audience.title}</h3>
+            <p className="max-w-md text-sm leading-7 text-slate-400">{audience.description}</p>
+            <Link href={audience.href} className="mt-6 inline-flex min-h-[44px] items-center gap-3 text-sm font-medium text-violet-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-300">{audience.action} <BsArrowRight aria-hidden="true" /></Link>
+          </div>
+        ))}
       </div>
-    </div>
-  );
-};
+    </section>
+  </div>
+);
 
 export default Home;

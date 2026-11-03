@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 const SEOHead = ({ 
-  title = "Yesid Fernando Cepeda B. - Full Stack Developer Portfolio",
+  title = "Yesid F Cepeda - Full Stack Developer Portfolio",
   description = "Modern portfolio showcasing full-stack development skills, projects, and experience. Specialized in React, Next.js, Node.js, and modern web technologies.",
   keywords = "full stack developer, web developer, react, nextjs, nodejs, javascript, portfolio, frontend, backend",
   ogImage = "/og-image.png",
@@ -12,7 +12,7 @@ const SEOHead = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Yesid Fernando Cepeda B." />
+      <meta name="author" content="Yesid F Cepeda" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       
       {/* Open Graph / Facebook */}

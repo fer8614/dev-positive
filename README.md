@@ -1,4 +1,4 @@
-# 🚀 Yesid Fernando Cepeda B. - Portfolio
+# 🚀 Yesid F Cepeda - Portfolio
 
 <div align="center">
 
@@ -135,6 +135,35 @@
 | `npm run build` | Build production version |
 | `npm run start` | Start production server |
 | `npm run lint` | Run ESLint for code quality |
+
+### Shared visual design and navigation
+
+The homepage introduces the developer and leads with ClipFactory, followed by LinkHub,
+TaskFlow and Product Manager. It provides separate next steps for recruiters and clients.
+ClipFactory is a full-stack, AI-assisted video clipping SaaS built with Next.js, NestJS,
+TypeScript, PostgreSQL and AWS. In the project catalogue it appears under both **Full Stack**
+and **AI Projects**: AI is a capability, not an exclusive category. Its supplied preview
+links to [clipfactory.win](https://clipfactory.win/). Featured projects reuse
+those in the existing project catalogue. All four primary navigation destinations (`/`,
+`/about`, `/work`, `/contact`) and social links remain available, with visible labels
+and a keyboard skip link. The shared footer also links to Services, Testimonials and
+all three legal pages.
+
+Every page uses the same dark/violet palette, typography, surfaces and footer. Inner
+pages use `components/PageShell.js`; shared styles and tokens live in `styles/globals.css`.
+The Projects introduction has dedicated recruiter/client links and catalogue-derived
+project, Full Stack and AI totals. Its optional `PageShell` aside leaves the standard
+header unchanged on other pages. Legal wording and existing page data are preserved. The Contact form retains native
+required-field validation; this visual update does not add a message-sending backend.
+
+With the development server running, check the public pages without submitting forms:
+
+```bash
+node --test tests/*.test.cjs
+
+# To check a server on a different port:
+PORTFOLIO_URL=http://localhost:3001 node --test tests/*.test.cjs
+```
 
 ---
 
@@ -352,7 +381,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 👨‍💻 About the Developer
 
-**Yesid Fernando Cepeda B.**
+**Yesid F Cepeda**
 - 🌍 **Location**: Keizer, Oregon
 - 📧 **Email**: fernando.inversionmf@gmail.com
 - 💼 **LinkedIn**: [Connect with me](https://www.linkedin.com/in/y-fernando-cepeda-b-/)
@@ -380,6 +409,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **⭐ Star this repository if you found it helpful!**
 
-Made with ❤️ by [Yesid Fernando Cepeda B.](https://github.com/fer8614)
+Made with ❤️ by [Yesid F Cepeda](https://github.com/fer8614)
 
 </div>

@@ -82,7 +82,8 @@
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js** (v16.0.0 or higher)
+- **[Node.js 26.13.0 LTS](https://nodejs.org/en/download)** (pinned in `.nvmrc`; requires `>=26.13.0 <27`)
+- **[nvm](https://github.com/nvm-sh/nvm)** (optional, for selecting the project runtime)
 - **npm** or **yarn** package manager
 - **Git** for version control
 
@@ -94,7 +95,16 @@
    cd dev-positive
    ```
 
-2. **Install dependencies**
+2. **Select the Node.js version**
+   ```bash
+   # With nvm installed, use the version pinned in .nvmrc
+   nvm install
+   nvm use
+   node --version # v26.13.0
+   ```
+   Without nvm, install Node.js 26.13.0 directly. GitHub Actions reads the same `.nvmrc` file.
+
+3. **Install dependencies**
    ```bash
    # Using npm
    npm install
@@ -103,7 +113,7 @@
    yarn install
    ```
 
-3. **Start development server**
+4. **Start development server**
    ```bash
    # Using npm
    npm run dev
@@ -112,7 +122,7 @@
    yarn dev
    ```
 
-4. **Open in browser**
+5. **Open in browser**
    ```
    http://localhost:3000
    ```

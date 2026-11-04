@@ -1,11 +1,11 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const base = process.env.PORTFOLIO_URL || 'http://localhost:3000';
-const name = 'Yesid F Cepeda';
+const name = 'Yesi Cepeda Benitez';
 const routes = ['/', '/about', '/work', '/contact', '/services', '/testimonials', '/privacy-policy', '/terms-of-service', '/data-deletion'];
 const cache = new Map();
 const text = html => html.replace(/<!--.*?-->/g, '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-const ownerNames = html => [...text(html).matchAll(/\bYesid\b.*?\bCepeda(?:\s+B\.)?/g)].map(match=>match[0]);
+const ownerNames = html => [...text(html).matchAll(/\bYesid?\b.*?\bCepeda(?:\s+Benitez|\s+B\.)?/g)].map(match=>match[0]);
 async function page(path) {
   if (!cache.has(path)) cache.set(path, fetch(new URL(path,base),{signal:AbortSignal.timeout(20000)}).then(async response=>{
     assert.equal(response.status,200,path);
@@ -30,13 +30,13 @@ test('the homepage introduction and all existing owner metadata use the same sho
   assert.deepEqual(ownerNames(main),[name],'homepage introduction');
   for (const route of routes) {
     const html = await page(route);
-    assert.doesNotMatch(html,/Yesid Fernando Cepeda(?: B\.)?/);
+    assert.doesNotMatch(html,/Yesid (?:F|Fernando) Cepeda(?: B\.)?/);
     const head = html.match(/<head\b[\s\S]*?<\/head>/)?.[0] || '';
     const author = head.match(/<meta\b[^>]*name="author"[^>]*content="([^"]*)"/);
     if (author) assert.equal(author[1],name,route+': author');
     const title = head.match(/<title>([\s\S]*?)<\/title>/)?.[1] || '';
     if (route !== '/testimonials') assert.ok(title.includes(name),route+': title');
-    if (route === '/') assert.ok(head.includes("Explore Yesid F Cepeda"),'homepage description');
+    if (route === '/') assert.ok(head.includes(`Explore ${name}`),'homepage description');
   }
 });
 

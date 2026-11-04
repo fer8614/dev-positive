@@ -19,7 +19,7 @@ async function page(path) {
 test("the homepage introduces the developer and offers clear project and contact actions", async () => {
   const html = await page("/");
   assert.match(text(html), /Good ideas deserve great software\./);
-  assert.match(text(html), /Yesid F Cepeda/);
+  assert.match(text(html), /Yesi Cepeda Benitez/);
   assert.ok(/href="\/?#selected-work"[^>]*>[\s\S]*?View projects/.test(html), "View projects must link to the featured-work section");
   assert.match(html, /href="\/contact"[^>]*>[\s\S]*?Let[\s\S]*?talk/);
 });

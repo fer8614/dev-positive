@@ -46,7 +46,7 @@ const TermsOfService = () => {
   return (
     <div className="w-full">
       <SEOHead 
-        title="Terms of Service - Yesid F Cepeda"
+        title="Terms of Service - Yesi Cepeda Benitez"
         description="Read our terms of service to understand the rules and conditions for using our website."
       />
       

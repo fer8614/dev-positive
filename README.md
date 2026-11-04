@@ -1,4 +1,4 @@
-# 🚀 Yesid F Cepeda - Portfolio
+# 🚀 Yesi Cepeda Benitez - Portfolio
 
 <div align="center">
 
@@ -381,7 +381,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 👨‍💻 About the Developer
 
-**Yesid F Cepeda**
+**Yesi Cepeda Benitez**
 - 🌍 **Location**: Keizer, Oregon
 - 📧 **Email**: fernando.inversionmf@gmail.com
 - 💼 **LinkedIn**: [Connect with me](https://www.linkedin.com/in/y-fernando-cepeda-b-/)
@@ -409,6 +409,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 **⭐ Star this repository if you found it helpful!**
 
-Made with ❤️ by [Yesid F Cepeda](https://github.com/fer8614)
+Made with ❤️ by [Yesi Cepeda Benitez](https://github.com/fer8614)
 
 </div>

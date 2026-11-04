@@ -46,7 +46,7 @@ const DataDeletion = () => {
   return (
     <div className="w-full">
       <SEOHead 
-        title="Data Deletion Policy - Yesid F Cepeda"
+        title="Data Deletion Policy - Yesi Cepeda Benitez"
         description="Learn how to request deletion of your personal data and understand our data deletion policy."
       />
       

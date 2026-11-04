@@ -48,7 +48,7 @@ const Footer = () => (
         </nav>
       </div>
       <div className="flex flex-col justify-between gap-3 border-t border-white/10 py-6 text-xs text-slate-500 sm:flex-row">
-        <p>&copy; {new Date().getFullYear()} Yesid F Cepeda. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Yesi Cepeda Benitez. All rights reserved.</p>
         <span>Built with care. Made to connect.</span>
       </div>
     </div>

@@ -34,7 +34,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="w-full">
       <SEOHead 
-        title="Privacy Policy - Yesid F Cepeda"
+        title="Privacy Policy - Yesi Cepeda Benitez"
         description="Read our privacy policy to understand how we collect, use, and protect your personal information."
       />
       

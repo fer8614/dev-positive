@@ -5,7 +5,7 @@ import SEOHead from "../../components/SEOHead";
 const Services = () => (
   <>
     <SEOHead
-      title="Services - Yesid F Cepeda | Web Development Solutions"
+      title="Services - Yesi Cepeda Benitez | Web Development Solutions"
       description="Discover my comprehensive web development services including frontend, backend, full-stack solutions, and modern web technologies expertise."
     />
     <PageShell

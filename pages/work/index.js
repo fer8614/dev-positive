@@ -58,7 +58,7 @@ const WorkOpportunities = () => (
 const Work = () => (
   <>
     <SEOHead
-      title="Work - Yesid F Cepeda | Portfolio & Projects"
+      title="Work - Yesi Cepeda Benitez | Portfolio & Projects"
       description="Explore my portfolio of innovative web development projects. From modern web applications to creative digital solutions, see how I bring ideas to life through code."
     />
     <PageShell

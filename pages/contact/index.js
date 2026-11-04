@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <>
       <SEOHead
-        title="Contact - Yesid F Cepeda | Get In Touch"
+        title="Contact - Yesi Cepeda Benitez | Get In Touch"
         description="Ready to collaborate? Contact me for web development projects, consultations, or any questions about modern web solutions."
       />
       <PageShell

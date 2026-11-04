@@ -46,7 +46,7 @@ const About = () => {
   return (
     <>
       <SEOHead
-        title="About - Yesid F Cepeda | Full Stack Developer"
+        title="About - Yesi Cepeda Benitez | Full Stack Developer"
         description="Learn about my journey as a full-stack developer, skills in modern web technologies, and professional experience in creating innovative digital solutions."
       />
       <PageShell

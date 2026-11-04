@@ -11,8 +11,8 @@ const actionStyle = "inline-flex min-h-[48px] items-center justify-center gap-3 
 const Home = () => (
   <div className="relative z-10 bg-[#0b0d14]">
     <SEOHead
-      title="Yesid F Cepeda — Full Stack Developer | DevPositive"
-      description="Full-stack development for teams and businesses. Explore Yesid F Cepeda's web applications, technical experience and ways to work together."
+      title="Yesi Cepeda Benitez — Full Stack Developer | DevPositive"
+      description="Full-stack development for teams and businesses. Explore Yesi Cepeda Benitez's web applications, technical experience and ways to work together."
     />
 
     <section aria-labelledby="intro-heading" className="relative overflow-hidden border-b border-white/10">
@@ -27,7 +27,7 @@ const Home = () => (
             Good ideas deserve <span className="text-violet-300">great software.</span>
           </h1>
           <p className="mt-7 max-w-lg text-base leading-8 text-slate-400 sm:text-lg">
-            I&apos;m <span className="font-medium text-slate-100">Yesid F Cepeda</span>.
+            I&apos;m <span className="font-medium text-slate-100">Yesi Cepeda Benitez</span>.
             I build thoughtful web experiences, connecting clean interfaces with solid backends — for teams and businesses.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
